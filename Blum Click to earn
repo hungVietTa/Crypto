@@ -1,5 +1,5 @@
 const play = 100
-const authen = "YOUR_TOKEN"
+const authen = "TOKEN"
 
 clear()
 async function sleep(ms) {
@@ -9,7 +9,7 @@ async function sleep(ms) {
 async function playAndClaimGame() {
   for (let i = 0; i < play; i++) {
     console.log(` - ${i}. Start Play game..`)
-    const _points = Math.floor(Math.random() * (120 -80 + 1)) + 110;
+    const _points = Math.floor(Math.random() * (190 - 160 + 1)) + 160;
     
     const headers =  {
       'accept': 'application/json, text/plain, */*',
@@ -34,7 +34,7 @@ async function playAndClaimGame() {
     const gameid = responseData.gameId;
     console.log(` - GameId: ${gameid}`)
 
-    const _sleep = Math.floor(Math.random() * 11 + 50) * 1000
+    const _sleep = Math.floor(Math.random() * 11 + 40) * 1000;
     console.log(` - sleep: ${_sleep/1000}s`)
     await sleep(_sleep)
     headers["content-type"] = 'application/json'
